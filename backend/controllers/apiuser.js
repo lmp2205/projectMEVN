@@ -1,10 +1,10 @@
-const Post = require('../models/post');
-module.exports = class API {
+const User = require('../models/user')
+module.exports = class APIuser {
     //fetchAll
     static async fetchAllPost(req, res) {
         try {
-            const posts = await Post.find();
-            res.status(200).json(posts);
+            const users = await User.find();
+            res.status(200).json(users);
         } catch (err) {
             res.status(400).json({ message: err.message })
         }
@@ -13,18 +13,17 @@ module.exports = class API {
     static async fetchPostByID(req, res) {
         const id = req.params.id;
         try {
-            const post = await Post.findById(id);
-            res.status(200).json(post);
-
+            const user = await User.findById(id);
+            res.status(200).json(user);
         } catch (err) {
             res.status(404).json({ message: err.message })
         }
     }
     //create
     static async createPost(req, res) {
-        const post = req.body;
+        const user = req.body;
         try {
-            await Post.create(post);
+            await User.create(user);
             res.status(201).json({ message: "Post create successfully!" });
 
         } catch (err) {
@@ -36,7 +35,7 @@ module.exports = class API {
         const id = req.params.id;
         const newPost = req.body;
         try {
-            await Post.findByIdAndUpdate(id, newPost);
+            await User.findByIdAndUpdate(id, newPost);
             res.status(200).json({ message: "Post update successfully!" });
 
         } catch (err) {
@@ -47,11 +46,10 @@ module.exports = class API {
     static async deletePost(req, res) {
         const id = req.params.id;
         try {
-            const result = await Post.findByIdAndDelete(id);
+            const result = await User.findByIdAndDelete(id);
             res.status(200).json({ message: "Post delete successfully!" });
         } catch (err) {
             res.status(404).json({ message: err.message })
         }
     }
 };
-

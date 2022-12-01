@@ -1,6 +1,7 @@
 import axios from "axios";
 const url = "/api/post/";
 
+
 export default class API {
     static async getAllPost(){
         const res = await axios.get(url);
@@ -24,3 +25,6 @@ export default class API {
         return res.data;
     }
 }
+
+
+

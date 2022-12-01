@@ -27,6 +27,7 @@ mongoose.connect(process.env.DB_URI, {
 
 //router
 app.use('/api/post', require('./routes/routes'));
+app.use('/api/user', require('./routes/routes1'));
 
 
 
