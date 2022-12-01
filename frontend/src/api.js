@@ -1,5 +1,5 @@
 import axios from "axios";
-const url = "/api/post";
+const url = "/api/post/";
 
 export default class API {
     static async getAllPost(){
@@ -16,7 +16,7 @@ export default class API {
         return res.data;
     }
     static async updatePost(id, post){
-        const res = await axios.path(`${url}/${id}`, post);
+        const res = await axios.patch(`${url}/${id}`, post);
         return res.data;
     }
     static async deletePost(id){

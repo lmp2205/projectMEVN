@@ -5,10 +5,10 @@ const multer = require('multer');
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './uploads');
+        cb(null);
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + "_" + Date.now() + file.originalname);
+        cb(null);
     },
 });
 let upload = multer({
@@ -17,7 +17,7 @@ let upload = multer({
 
 router.get('/', API.fetchAllPost);
 router.get('/:id', API.fetchPostByID);
-router.post("/", upload, API.createPost);
+router.post("/",upload,  API.createPost);
 router.patch('/:id',upload, API.updatePost);
 router.delete('/:id', API.deletePost);
 

@@ -4,24 +4,24 @@
         <v-row>
             <v-col sm="10" class="pa-4 mx-auto">
                 <v-card class="pa-2">
-                    <v-img :src="`/${post.image}`"></v-img>
-                    <v-card-action class="pb-0">
+                    <v-img :src="`${post.image}`"></v-img>
+                    <v-card-action class="pb-0">,
                         <v-row class="mt-1 mx-1">
                             <v-col sm="2">
-                                <v-btn small outline color="primary">{{post.category}}</v-btn>
+                                <v-btn small outline color="primary" >{{ post.category }}</v-btn>
                             </v-col>
-                            <v-col sm="10" class="d-flex justify-end">
-                                <v-btn color="success">Edit</v-btn>
-                                <v-btn color="red">Delete</v-btn>
-                            </v-col>
+                            <!-- <v-col sm="10" class="d-flex justify-end" >
+                                <v-btn color="success" text >Edit </v-btn>
+                                <v-btn color="red" text>Delete</v-btn>
+                            </v-col> -->
                         </v-row>
                     </v-card-action>
                     <v-card-subtitle class="headline">
-                        <h3>{{post.title}}</h3>
+                        <h3>{{ post.title }}</h3>
                     </v-card-subtitle>
                     <v-card-text class="grey--text">
-                        <p>{{post.content}}</p>
-                        <p>{{post.created}}</p>
+                        <p>{{ post.content }}</p>
+                        <p>{{ post.created }}</p>
                     </v-card-text>
                 </v-card>
             </v-col>
